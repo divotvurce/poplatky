@@ -1,8 +1,17 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Header from "./Header";
-import LandingPage from "./LandingPage";
-import InvestmentCalculator from "./InvestmentCalculator";
+import Header from "./components/Header";
+import LandingPage from "./components/LandingPage";
+import InvestmentCalculator from "./components/InvestmentCalculator";
+import AboutPage from "./components/AboutPage";
+import StoriesPage from "./components/StoriesPage";
+import StoryDetail from "./components/StoryDetail";
+import stories from "./data/storiesData";
+import KalkulackyPage from "./components/KalkulackyPage";
+import InvestmentComparisonCalculator from "./components/InvestmentComparisonCalculator";
+import Kalkulacka from "./components/Kalkulacka";
+import CompoundInterestCalculator from "./components/CompoundInterestCalculator";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -12,13 +21,17 @@ export default function App() {
       <main className="flex-grow container mx-auto px-6 py-12 max-w-4xl">
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/kalkulacka" element={<InvestmentCalculator />} />
+          <Route path="/kalkulacky" element={<KalkulackyPage />} />
+          <Route path="/pribehy" element={<StoriesPage />} />
+          <Route path="/pribehy/:id" element={<StoryDetail />} />
+          <Route path="/o-projektu" element={<AboutPage />} />
+          <Route path="/kalkulacky/srovnani" element={<InvestmentComparisonCalculator />} />
+          <Route path="/kalkulacky/poplatky" element={<Kalkulacka />} />
+          <Route path="/kalkulacky/slozene-uroceni" element={<CompoundInterestCalculator />} />
         </Routes>
       </main>
 
-      <footer className="bg-blue-100 py-6 mt-auto text-center text-sm text-gray-600">
-        © {new Date().getFullYear()} Transparentní Poplatky. Všechny práva vyhrazena.
-      </footer>
+      <Footer /> 
     </div>
   );
 }

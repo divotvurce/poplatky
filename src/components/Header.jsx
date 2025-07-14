@@ -18,13 +18,13 @@ export default function Header() {
           <Link to="/" className="hover:underline">
             Domů
           </Link>
-          <Link to="/kalkulacka" className="hover:underline">
+          <Link to="/kalkulacky" className="hover:underline">
             Kalkulačky
           </Link>
           <Link to="/pribehy" className="hover:underline">
             Příběhy
           </Link>
-        <Link to="/pribehy" className="hover:underline">
+        <Link to="/o-projektu" className="hover:underline">
             O projektu
           </Link>
         </nav>
